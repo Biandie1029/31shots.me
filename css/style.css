@@ -30,10 +30,23 @@ th {
     color: red;
 }
 
-:link{
-    color: white;
+a:link {
+    color: red;
 }
 
-:visited{
+a:visited {
     color: green;
 }
+
+a:active{
+    color: yellow;
+}
+
+a:hover {
+    color: aqua;
+}
+
+a:active{
+    color: orange;
+}
+
