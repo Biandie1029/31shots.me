@@ -11,11 +11,11 @@ section {
     color: white;
 }
 
-h1 {
+h1,
+h2 {
     color: black;
 }
 
-h2, 
 h3, 
 h4, 
 th {
