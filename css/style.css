@@ -11,13 +11,14 @@ section {
     color: white;
 }
 
+h3, 
+h4 {
+    color: blue;
+}
+
 h1,
 h2,
 th {
     color: black;
 }
-
-h3, 
-h4 {
-    color: blue;
-} 
+ 
