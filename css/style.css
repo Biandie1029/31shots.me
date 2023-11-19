@@ -12,12 +12,12 @@ section {
 }
 
 h1,
-h2 {
+h2,
+th {
     color: black;
 }
 
 h3, 
-h4,
-th {
+h4 {
     color: blue;
 } 
