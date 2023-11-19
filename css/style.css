@@ -11,7 +11,7 @@ section {
     color: black;
 }
 
-h3, 
+h3,
 h4 {
     color: blue;
 }
@@ -22,8 +22,18 @@ th {
     color: black;
 }
 
-.alt-row{
+.alt-row {
     color: red;
 }
 
+#military-and-security abbr[title] {
+    color: red;
+}
 
+:link{
+    color: white;
+}
+
+:visited{
+    color: green;
+}
