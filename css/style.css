@@ -1,52 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Oswald&display=swap');
+
 body {
-    color: black;
-    background-color: gray;
+    color: #111;
+    background-color: rgb(177, 171, 170);
+    font-family: "Lato", "Oswald", "Arial", sans-serif;
 }
 
 figcaption {
-    color: red;
+    color: rgb(128, 0, 0);
+    font-size: 14px;
+    font-style: italic;
 }
 
 section {
-    color: black;
+    color: #111;
 }
 
 h3,
 h4 {
-    color: blue;
+    color: rgb(1, 27, 202);
 }
 
 h1,
-h2,
+h2 {
+    color: #111;
+}
+
 th {
-    color: black;
+    color: #111;
+    font-family: "Oswald", "Lato", "Arial", sans-serif;
 }
 
 .alt-row {
-    color: red;
+    color: rgb(128, 0, 0);
 }
 
 #military-and-security abbr[title] {
-    color: red;
+    color: rgb(128, 0, 0);
 }
 
 a:link {
-    color: red;
+    color: rgb(128, 0, 0);
 }
 
 a:visited {
-    color: green;
+    color: rgb(34, 139, 34);
 }
 
-a:active{
-    color: yellow;
+a:active {
+    color: rgb(235, 185, 14);
 }
 
 a:hover {
-    color: aqua;
+    color: rgb(16, 241, 189);
 }
 
-a:active{
-    color: orange;
+a:active {
+    color: rgb(240, 142, 14);
 }
 
+/*
+figure {
+    margin: 0;
+}
+
+main {
+    max-width: 600px;
+}
+*/
