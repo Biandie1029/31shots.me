@@ -8,6 +8,7 @@ body {
 
 figcaption {
     color: rgb(128, 0, 0);
+    font-family: "Oswald", "Lato", "Arial", sans-serif;
     font-size: 14px;
     font-style: italic;
 }
@@ -22,13 +23,19 @@ h4 {
 }
 
 h1,
-h2 {
+h2,
+th {
     color: #111;
 }
 
-th {
-    color: #111;
+td {
     font-family: "Oswald", "Lato", "Arial", sans-serif;
+}
+
+table,
+th,
+td {
+    border: 1.5px solid #111;
 }
 
 p {
@@ -40,7 +47,7 @@ p {
 }
 
 #military-and-security abbr[title] {
-    color: rgb(128, 0, 0);
+    color: rgb(112, 41, 99);
 }
 
 a:link {
@@ -52,12 +59,19 @@ a:visited {
 }
 
 a:hover {
+    background-color: #111;
     color: rgb(16, 241, 189);
 }
 
 a:active {
     color: rgb(240, 142, 14);
 }
+
+#box {
+    padding: 10px 10px 10px 10px;
+    margin: 10px 10px 10px 10px;
+}
+
 
 /*
 figure {
