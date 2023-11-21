@@ -10,6 +10,12 @@ body {
     margin: 0 auto;
 }
 
+#people-and-society,
+#government {
+    display: grid;
+    grid-template-columns: 175px 175px 175px 175px;
+}
+
 figcaption {
     color: rgb(128, 0, 0);
     font-family: "Oswald", "Lato", "Arial", sans-serif;
