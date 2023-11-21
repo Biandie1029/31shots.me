@@ -4,8 +4,9 @@ body {
     color: #111;
     background-color: rgb(177, 171, 170);
     font-family: "Lato", "Oswald", "Arial", sans-serif;
-    padding: 10px 10px 10px 10px;
-    max-width: 960px;
+    padding: 20px 20px 20px 20px;
+    font-size: 18px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
