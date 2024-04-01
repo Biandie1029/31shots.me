@@ -9,6 +9,7 @@ body {
     max-width: 900px;
     margin: 0 auto;
 }
+
 #history,
 #next-steps {
     display: grid;
