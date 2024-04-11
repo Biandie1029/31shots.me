@@ -10,12 +10,6 @@ body {
     margin: 0 auto;
 }
 
-#history,
-#next-steps {
-    display: grid;
-    grid-template-columns: 175px 175px 175px 175px;
-}
-
 figcaption {
     color: rgb(0, 13, 255);
     font-family: "Oswald", "Lato", "Arial", sans-serif;
