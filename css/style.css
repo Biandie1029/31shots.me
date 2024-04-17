@@ -30,7 +30,7 @@ p {
     line-height: 1.75;
 }
 
-#history {
+#introduction {
     display: grid;
     grid-template-columns: 175px 175px 175px 175px;
 }
