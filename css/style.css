@@ -33,6 +33,13 @@ p {
 #introduction {
     display: grid;
     grid-template-columns: 175px 175px 175px 175px;
+    grid-template-areas: 
+    'left right';
+}
+
+.right {
+    padding: 10px;
+    height: 300px;
 }
 
 a:link {
