@@ -33,13 +33,17 @@ p {
 #introduction {
     display: grid;
     grid-template-columns: 175px 175px 175px 175px;
-    p{
-        float: left;
-    }
+}
+
+
+.wrapper {
+    margin: 150px auto;
     img{
         float: right;
     }
 }
+
+
 
 a:link {
     color: rgb(128, 0, 0);
