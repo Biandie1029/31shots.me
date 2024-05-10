@@ -33,6 +33,9 @@ p {
 #introduction {
     display: grid;
     grid-template-columns: 175px 175px 175px 175px;
+    img{
+        float: right;
+    }
 }
 
 a:link {
