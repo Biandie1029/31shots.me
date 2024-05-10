@@ -35,15 +35,9 @@ p {
     grid-template-columns: 175px 175px 175px 175px;
 }
 
-
-.wrapper {
-    margin: 150px auto;
-    img{
-        float: left;
-    }
+img {
+    float: right;
 }
-
-
 
 a:link {
     color: rgb(128, 0, 0);
