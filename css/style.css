@@ -39,7 +39,7 @@ p {
 .wrapper {
     margin: 150px auto;
     img{
-        float: right;
+        float: left;
     }
 }
 
