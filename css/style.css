@@ -35,11 +35,12 @@ p {
     justify-content: space-between;
     padding: 40px;
     width: 60px;
-    margin: 10rem, auto , 0, auto;
 }
 
 .intro-div img{
     height: 250px;
+    text-align: right;
+    float: left;
 }
 
 a:link {
@@ -57,12 +58,4 @@ a:hover {
 
 a:active {
     color: rgb(240, 142, 14);
-}
-
-figure {
-    padding: 10px 10px 10px 10px;
-}
-
-main {
-    max-width: 700px;
 }
