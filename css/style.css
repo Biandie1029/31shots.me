@@ -35,6 +35,10 @@ p {
     justify-content: space-between;
 }
 
+.intro-div img{
+    height: 250px;
+}
+
 a:link {
     color: rgb(128, 0, 0);
 }
