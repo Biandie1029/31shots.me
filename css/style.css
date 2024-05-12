@@ -30,13 +30,6 @@ p {
     line-height: 1.75;
 }
 
-.intro-div{
-    display: flex;
-    justify-content: space-between;
-    padding: 40px;
-    width: 60%;
-}
-
 .intro-div img{
     height: 250px;
     float: right;
