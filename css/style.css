@@ -35,11 +35,11 @@ p {
     justify-content: space-between;
     padding: 40px;
     width: 60%;
-    margin: 10rem auto 0 auto;
 }
 
 .intro-div img{
     height: 250px;
+    float: right;
 }
 
 a:link {
