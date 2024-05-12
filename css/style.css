@@ -30,11 +30,6 @@ p {
     line-height: 1.75;
 }
 
-#introduction {
-    display: grid;
-    grid-template-columns: 175px 175px 175px 175px;
-}
-
 .intro-div{
     display: flex;
     justify-content: space-between;
