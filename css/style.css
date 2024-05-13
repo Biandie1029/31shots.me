@@ -30,12 +30,12 @@ p {
     line-height: 1.75;
 }
 
-.intro-div p{
+.intro-paragraph{
     width: 500px;
     float: left;
 }
 
-.intro-div img{
+.intro-image{
     height: 250px;
     float: right;
 }
