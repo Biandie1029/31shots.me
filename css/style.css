@@ -30,6 +30,10 @@ p {
     line-height: 1.75;
 }
 
+.intro-div{
+    max-width: 500px;
+}
+
 .intro-div p{
     float: left;
 }
