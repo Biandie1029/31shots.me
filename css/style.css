@@ -32,6 +32,7 @@ p {
 
 .intro-div p{
     float: left;
+    margin-right: 100px;
 }
 
 .intro-div img{
