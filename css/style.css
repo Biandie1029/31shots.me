@@ -33,12 +33,6 @@ p {
 .intro-div img{
     height: 250px;
     float: right;
-    margin-left: 10px;
-    clear: both;
-}
-
-.intro-div p{
-    float: left;
 }
 
 a:link {
