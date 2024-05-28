@@ -38,6 +38,7 @@ p {
 .intro-div img{
     height: 250px;
     float: right;
+    margin-left: 500px;
 }
 
 a:link {
