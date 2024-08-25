@@ -35,9 +35,12 @@ section {
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
+.origins-div p{
+    float: left;
+}
+
 .origins-div img{
-    width: 200px;
-    height: 200px;
+    float: right;
 }
 .site-div {
     display: grid;
