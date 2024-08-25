@@ -49,10 +49,6 @@ a:active {
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
-.intro-div > p{
-    float: left;
-}
-
 .site-img > img{
     float: right;
     height: 250px;
@@ -68,4 +64,8 @@ a:active {
       'footer footer footer footer footer footer';
     gap: 10px;
     padding: 10px;
+}
+
+.intro-div > p{
+    float: left;
 }
