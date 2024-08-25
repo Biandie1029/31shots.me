@@ -44,25 +44,16 @@ a:active {
 }
 
 .intro-div {grid-area: intro;}
+.site-img {grid-area: img;}
 .origins-div {grid-area: origins;}
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
-.origins-div p{
-    float: left;
-}
-
-.origins-div img{
-    width: 200px;
-    height: 200px;
-    float: right;
-}
-
 .site-div {
     display: grid;
     grid-template-areas:
-      'intro intro intro intro intro intro'
-      'origins origins origins origins origins origins'
+      'intro intro intro intro img img'
+      'origins origins origins origins img img'
       'future future future future future future'
       'footer footer footer footer footer footer';
     gap: 10px;
