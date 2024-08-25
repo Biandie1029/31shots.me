@@ -17,10 +17,6 @@ figcaption {
     font-style: italic;
 }
 
-section {
-    color: #111;
-}
-
 h1,
 h2 {
     color: #111;
@@ -28,6 +24,10 @@ h2 {
 
 p {
     line-height: 1.75;
+}
+
+section {
+    color: #111;
 }
 
 .intro-div img{
@@ -38,7 +38,6 @@ p {
 #origins {
     float: left;
 }
-
 
 a:link {
     color: rgb(128, 0, 0);
