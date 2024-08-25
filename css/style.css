@@ -30,13 +30,13 @@ section {
     color: #111;
 }
 
+#origins {
+    float: left;
+}
+
 .intro-div img{
     height: 250px;
     float: right;
-}
-
-#origins {
-    float: left;
 }
 
 a:link {
