@@ -31,14 +31,18 @@ section {
 }
 
 .intro-div {grid-area: intro;}
-.intro-img {grid-area: img;}
 .origins-div {grid-area: origins;}
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
-.intro-img > img{
-    
+.origins-div p{
+    float: left;
 }
+
+.origins-div img{
+    float: right;
+}
+
 .site-div {
     display: grid;
     grid-template-areas:
@@ -49,8 +53,6 @@ section {
     gap: 10px;
     padding: 10px;
 }
-
-
 
 a:link {
     color: rgb(128, 0, 0);
