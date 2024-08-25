@@ -36,7 +36,8 @@ section {
 .footer-div {grid-area: footer;}
 
 .origins-div img{
-    float: right;
+    width: 200px;
+    height: 200px;
 }
 .site-div {
     display: grid;
