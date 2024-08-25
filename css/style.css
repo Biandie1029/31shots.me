@@ -42,7 +42,7 @@ section {
 .site-div {
     display: grid;
     grid-template-areas:
-      'intro intro intro intro intro intro'
+      'intro intro intro img img img'
       'origins origins origins img img img'
       'future future future future future future'
       'footer footer footer footer footer footer';
