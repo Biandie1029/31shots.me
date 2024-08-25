@@ -31,7 +31,11 @@ p {
 }
 
 
-#origins img{
+#origins{
+    float: left;
+}
+
+.intro-div img{
     height: 250px;
     float: right;
 }
