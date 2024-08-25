@@ -30,16 +30,17 @@ section {
     color: #111;
 }
 
-.intro-div { grid-area: intro; }
-.origins-div { grid-area: origins; }
-.future-div { grid-area: future; }
-.footer-div { grid-area: footer;}
+.intro-div {grid-area: intro;}
+.intro-img {grid-area: img;}
+.origins-div {grid-area: origins;}
+.future-div {grid-area: future;}
+.footer-div {grid-area: footer;}
 
 .site-div {
     display: grid;
     grid-template-areas:
       'intro intro intro intro intro intro'
-      'origins origins origins origins origins origins'
+      'origins origins origins img img img'
       'future future future future future future'
       'footer footer footer footer footer footer';
     gap: 10px;
