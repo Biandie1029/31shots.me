@@ -49,14 +49,14 @@ a:active {
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
+.origins-div > p{
+    float: left;
+}
+
 .site-img > img{
     float: right;
     height: 250px;
     width: 250px;
-}
-
-.origins-div > p{
-    float: left;
 }
 
 .site-div {
