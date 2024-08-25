@@ -46,8 +46,8 @@ section {
 .site-div {
     display: grid;
     grid-template-areas:
-      'intro intro intro img img img'
-      'origins origins origins img img img'
+      'intro intro intro intro intro intro'
+      'origins origins origins origins origins origins'
       'future future future future future future'
       'footer footer footer footer footer footer';
     gap: 10px;
