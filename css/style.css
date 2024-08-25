@@ -43,6 +43,7 @@ a:active {
     color: rgb(240, 142, 14);
 }
 
+.header-nav{grid-area: header;}
 .site-img {grid-area: img;}
 .intro-div {grid-area: intro;}
 .origins-div {grid-area: origins;}
@@ -58,8 +59,9 @@ a:active {
 .site-div {
     display: grid;
     grid-template-areas:
-    'intro intro intro intro img img'
-    'origins origins origins origins img img'
+    'header header header header img img'
+    'intro intro intro intro intro intro'
+    'origins origins origins origins origins origins'
     'future future future future future future'
     'footer footer footer footer footer footer';
     gap: 10px;
