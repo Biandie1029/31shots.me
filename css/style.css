@@ -49,14 +49,10 @@ a:active {
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
-.intro-div{
-    float: left;
-}
-
 .site-img > img{
     float: right;
-    height: 200px;
-    width: 200px;
+    height: 175px;
+    width: 175px;
 }
 
 .site-div {
