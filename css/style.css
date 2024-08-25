@@ -55,15 +55,16 @@ a:active {
     width: 250px;
 }
 
-.intro-div > P{
+.origins-div > p{
     float: left;
 }
+
 .site-div {
     display: grid;
     grid-template-areas:
-      'intro intro intro intro img img'
+      'intro intro intro intro intro intro'
       'origins origins origins origins img img'
-      'future future future future future future'
+      'future future future future img img'
       'footer footer footer footer footer footer';
     gap: 10px;
     padding: 10px;
