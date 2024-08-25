@@ -30,15 +30,15 @@ p {
     line-height: 1.75;
 }
 
+.intro-div img{
+    height: 250px;
+    float: right;
+}
 
 #origins {
     float: left;
 }
 
-.intro-div img{
-    height: 250px;
-    float: right;
-}
 
 a:link {
     color: rgb(128, 0, 0);
