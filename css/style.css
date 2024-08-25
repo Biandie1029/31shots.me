@@ -58,7 +58,7 @@ a:active {
 .site-div {
     display: grid;
     grid-template-areas:
-    'intro intro intro into img img'
+    'intro intro intro intro img img'
     'origins origins origins origins img img'
     'future future future future future future'
     'footer footer footer footer footer footer';
