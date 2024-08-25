@@ -43,16 +43,20 @@ a:active {
     color: rgb(240, 142, 14);
 }
 
-.intro-div {grid-area: intro;}
 .site-img {grid-area: img;}
+.intro-div {grid-area: intro;}
 .origins-div {grid-area: origins;}
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
 .site-img > img{
     float: right;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
+}
+
+.intro-div > P{
+    float: left;
 }
 .site-div {
     display: grid;
