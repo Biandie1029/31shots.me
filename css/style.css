@@ -55,10 +55,6 @@ a:active {
     width: 250px;
 }
 
-.origins-div > p{
-    float: left;
-}
-
 .site-div {
     display: grid;
     grid-template-areas:
