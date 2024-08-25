@@ -49,6 +49,11 @@ a:active {
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
+.site-img > img{
+    float: right;
+    height: 200px;
+    width: 200px;
+}
 .site-div {
     display: grid;
     grid-template-areas:
