@@ -33,13 +33,15 @@ section {
 .intro-div { grid-area: intro; }
 .origins-div { grid-area: origins; }
 .future-div { grid-area: future; }
+.footer-div { grid-area: footer;}
 
 .site-div {
     display: grid;
     grid-template-areas:
       'intro intro intro intro intro intro'
       'origins origins origins origins origins origins'
-      'future future future future future future';
+      'future future future future future future'
+      'footer footer footer footer footer footer';
     gap: 10px;
     padding: 10px;
 }
