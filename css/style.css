@@ -28,6 +28,7 @@ h2 {
 
 p {
     line-height: 1.75;
+    width: min-content;
     float: left;
 }
 
