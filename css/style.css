@@ -26,10 +26,6 @@ p {
     line-height: 1.75;
 }
 
-section {
-    color: #111;
-}
-
 .intro-div {grid-area: intro;}
 .origins-div {grid-area: origins;}
 .future-div {grid-area: future;}
