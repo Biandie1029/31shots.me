@@ -6,7 +6,7 @@ body {
     font-family: "Lato", "Oswald", "Arial", sans-serif;
     padding: 20px 20px 20px 20px;
     font-size: 18px;
-    max-width: max-content;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -26,6 +26,19 @@ p {
     line-height: 1.75;
 }
 
+section {
+    color: #111;
+}
+
+.intro-div img{
+    height: 250px;
+    float: right;
+}
+
+#origins {
+    float: left;
+}
+
 a:link {
     color: rgb(128, 0, 0);
 }
@@ -41,17 +54,4 @@ a:hover {
 
 a:active {
     color: rgb(240, 142, 14);
-}
-
-section {
-    color: #111;
-}
-
-.intro-div img{
-    height: 250px;
-    float: right;
-}
-
-#origins {
-    float: left;
 }
