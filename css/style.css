@@ -30,9 +30,18 @@ section {
     color: #111;
 }
 
-.intro-div img{
-    height: 250px;
-    float: right;
+.intro-div { grid-area: intro; }
+.origins-div { grid-area: origins; }
+.future-div { grid-area: future; }
+
+.site-div {
+    display: grid;
+    grid-template-areas:
+      'intro intro intro intro intro intro'
+      'origins origins origins origins origins origins'
+      'future future future future future future';
+    gap: 10px;
+    padding: 10px;
 }
 
 a:link {
@@ -50,8 +59,4 @@ a:hover {
 
 a:active {
     color: rgb(240, 142, 14);
-}
-
-#origins {
-    float: left;
 }
