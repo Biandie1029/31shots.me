@@ -31,21 +31,25 @@ section {
 }
 
 .intro-div {grid-area: intro;}
-.intro-img {grid-area: img;}
 .origins-div {grid-area: origins;}
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
 
+.origins-div img{
+    float: right;
+}
 .site-div {
     display: grid;
     grid-template-areas:
       'intro intro intro intro intro intro'
-      'origins origins origins img img img'
+      'origins origins origins origins origins origins'
       'future future future future future future'
       'footer footer footer footer footer footer';
     gap: 10px;
     padding: 10px;
 }
+
+
 
 a:link {
     color: rgb(128, 0, 0);
