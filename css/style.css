@@ -30,12 +30,8 @@ p {
     line-height: 1.75;
 }
 
-#origins{
-float: left;
 
-}
-
-.intro-div img{
+#origins img{
     height: 250px;
     float: right;
 }
