@@ -49,7 +49,6 @@ a:active {
 .origins-div {grid-area: origins;}
 .future-div {grid-area: future;}
 .footer-div {grid-area: footer;}
-.page-controls{grid-area: controls;}
 
 .site-img > img{
     float: right;
@@ -64,13 +63,10 @@ a:active {
     'intro intro intro intro intro intro'
     'origins origins origins origins origins origins'
     'future future future future future future'
-    'footer footer footer footer footer footer'
-    'controls controls controls controls controls';
+    'footer footer footer footer footer footer';
     gap: 10px;
     padding: 10px;
 }
-
-
 
 a {
     text-decoration: none;

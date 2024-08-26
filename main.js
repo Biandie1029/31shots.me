@@ -1,96 +1,29 @@
-// Variables
-let nextBtn = document.querySelector(".next-round");
-let prevBtn = document.querySelector(".previous-round");
-let tile = document.querySelectorAll(".page-controls");
-let listLength = tile.length - 1;
+const pages =
+["index.html","september.html","october.html","november.html","december.html"];
 
-/* Set interface at page load */
-prevBtn.setAttribute("disabled", "");
+const currentUrl = window.location.href;
+const i = pages.indexOf(currentUrl) 
+const arrowUp = document.getElementById("up");
+const arrowDown = document.getElementById("down");
 
-
-// Counter from MDN Closures article; https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
-let count = (function() {
-  let privateCounter = 0;
-  function changeBy(val) {
-    privateCounter += val;
-  }
-
-  return {
-    countUp: function() {
-      changeBy(1);
-    },
-    countDown: function() {
-      changeBy(-1);
-    },
-    value: function() {
-      return privateCounter;
+function next(){
+        i = i === pages.length - 1 // if index at end
+            ? 0                    // go to start
+            : i + 1;               // else go next
+        let goTo = pages[i];
+        window.location = goTo;
     }
-  };
-})();
 
+function prev(){
 
-function selectNext() {
-  let currentIndex = count.value();
+        i = i === 0            // if index is at start
+            ? pages.length - 1 // go to end
+            : i - 1;           // else go back one
+        let goTo = pages[i];
+        window.location = goTo;
+    }    
 
-  currentIndex = currentIndex + 1;
+arrowUp.addEventListener("click",next());
 
-  //console.log(tile.length);
-
-  /* Increment count value */
-  count.countUp();
-
-  //console.log(currentIndex);
-  //console.log(listLength);
-
-  /* Add highlighting to the next tile */
-  if (tile[currentIndex] !== undefined) {
-    tile[currentIndex].classList.add("is-selected");
-  }
-
-  /* Remove from previous tile */
-  if (tile[currentIndex - 1] !== undefined) {
-    tile[currentIndex - 1].classList.remove("is-selected");
-  }
-
-  /* Set next image button to disabled if we are on the last tile;
-   * set previous button to enabled */
-  if (currentIndex === listLength) {
-    nextBtn.setAttribute("disabled", "");
-  } else {
-    prevBtn.removeAttribute("disabled");
-  }
-}
-
-
-function selectPrev() {
-  let currentIndex = count.value();
-
-  /* Decrement count value */
-  count.countDown();
-
-  /* Add highlighting to previous tile */
-  if (currentIndex > 0 && tile[currentIndex - 1] !== undefined) {
-    tile[currentIndex - 1].classList.add("is-selected");
-  }
-
-  /* Remove from current tile */
-  if (tile[currentIndex] !== undefined) {
-    tile[currentIndex].classList.remove("is-selected");
-  }
-
-  /* Set previous image button to disabled if we are on the first image tile;
-   * set next button to enabled
-   */
-  if (currentIndex - 1 <= 0) {
-    prevBtn.setAttribute("disabled", "");
-  } else {
-    nextBtn.removeAttribute("disabled");
-  }
-}
-
-
-// Event Listeners
-nextBtn.addEventListener("click", selectNext);
-prevBtn.addEventListener("click", selectPrev);
-  
+arrowDown.addEventListener("click",prev());
   
