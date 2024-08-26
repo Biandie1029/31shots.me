@@ -1,29 +1,27 @@
-const pages =
-["index.html","september.html","october.html","november.html","december.html"];
+// Mapping pages to their respective file names
+const pages = ['index.html', 'september.html', 'october.html', 'november.html', 'december.html'];
 
-const currentUrl = window.location.href;
-const i = pages.indexOf(currentUrl) 
-const arrowUp = document.getElementById("up");
-const arrowDown = document.getElementById("down");
+// Determine the current page based on the URL
+const currentPage = window.location.pathname.split("/").pop();
+const pageIndex = pages.indexOf(currentPage);
 
-function next(){
-        i = i === pages.length - 1 // if index at end
-            ? 0                    // go to start
-            : i + 1;               // else go next
-        let goTo = pages[i];
-        window.location = goTo;
-    }
+// Set the URLs for the previous and next pages
+const prevPage = pageIndex > 0 ? pages[pageIndex - 1] : null;
+const nextPage = pageIndex < pages.length - 1 ? pages[pageIndex + 1] : null;
 
-function prev(){
+// Get the button elements
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 
-        i = i === 0            // if index is at start
-            ? pages.length - 1 // go to end
-            : i - 1;           // else go back one
-        let goTo = pages[i];
-        window.location = goTo;
-    }    
+// Enable or disable buttons based on the current page
+if (prevPage) {
+    prevBtn.onclick = () => window.location.href = prevPage;
+} else {
+    prevBtn.disabled = true;
+}
 
-arrowUp.addEventListener("click",next());
-
-arrowDown.addEventListener("click",prev());
-  
+if (nextPage) {
+    nextBtn.onclick = () => window.location.href = nextPage;
+} else {
+    nextBtn.disabled = true;
+}
