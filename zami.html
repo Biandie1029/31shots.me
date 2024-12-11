@@ -24,7 +24,7 @@
       position: absolute;
       border-radius: 50%;
       opacity: 0.6;
-      transition: opacity 0.3s;
+      transition: opacity 0.3s, top 0.5s, left 0.5s;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -46,44 +46,47 @@
       display: none;
       z-index: 10;
     }
+    .text-circle {
+      overflow: hidden;
+      word-wrap: break-word;
+      text-align: justify;
+    }
   </style>
 </head>
 <body>
   <h1>Interactive Venn Diagram: Themes in <i>Zami</i></h1>
   <div id="diagram">
-    <div class="circle" id="gender" style="background-color: #ff7f7f; width: 300px; height: 300px; top: 200px; left: 50px;" data-section="Gender">Gender</div>
-    <div class="circle" id="race" style="background-color: #7f7fff; width: 300px; height: 300px; top: 200px; left: 300px;" data-section="Race">Race</div>
-    <div class="circle" id="diaspora" style="background-color: #7fff7f; width: 300px; height: 300px; top: 50px; left: 175px;" data-section="Diaspora">Diaspora</div>
-    <div class="circle" id="queerness" style="background-color: #ff7fff; width: 300px; height: 300px; top: 350px; left: 175px;" data-section="Queerness">Queerness</div>
-    
+    <div class="circle" id="gender" style="background-color: #ff7f7f; width: 300px; height: 300px; top: 50px; left: 50px;" data-section="Gender">Gender</div>
+    <div class="circle" id="race" style="background-color: #7f7fff; width: 300px; height: 300px; top: 50px; left: 400px;" data-section="Race">Race</div>
+    <div class="circle" id="diaspora" style="background-color: #7fff7f; width: 300px; height: 300px; top: 400px; left: 50px;" data-section="Diaspora">Diaspora</div>
+    <div class="circle" id="queerness" style="background-color: #ff7fff; width: 300px; height: 300px; top: 400px; left: 400px;" data-section="Queerness">Queerness</div>
+
     <div class="tooltip" id="tooltip">Hover over a section to learn more.</div>
   </div>
 
   <script>
-    const tooltips = {
-      "gender": "<strong>Gender:</strong> Explores Lorde's reflections on her mother’s strength and traditional gender roles.",
-      "race": "<strong>Race:</strong> Discusses societal pressures and Lorde’s experience as a Black woman.",
-      "diaspora": "<strong>Diaspora:</strong> Examines cultural heritage and identity in Lorde’s life.",
-      "queerness": "<strong>Queerness:</strong> Analyzes societal and personal challenges around sexual identity.",
-      "intersection": "<strong>Intersectionality:</strong> Overlaps between multiple identities that define Lorde’s experiences."
-    };
-
     const circles = document.querySelectorAll('.circle');
-    const tooltip = document.getElementById('tooltip');
+    const diagram = document.getElementById('diagram');
     let selectedCircles = [];
+    let newCircle = null;
+
+    function resetCircles() {
+      circles.forEach(circle => {
+        circle.style.border = "none";
+        circle.style.top = circle.getAttribute("data-original-top");
+        circle.style.left = circle.getAttribute("data-original-left");
+      });
+      if (newCircle) {
+        newCircle.remove();
+        newCircle = null;
+      }
+      selectedCircles = [];
+    }
 
     circles.forEach(circle => {
-      circle.addEventListener('mouseover', (e) => {
-        const section = e.target.id;
-        tooltip.innerHTML = tooltips[section] || tooltips["intersection"];
-        tooltip.style.top = `${e.clientY - 40}px`;
-        tooltip.style.left = `${e.clientX + 10}px`;
-        tooltip.style.display = 'block';
-      });
-
-      circle.addEventListener('mouseout', () => {
-        tooltip.style.display = 'none';
-      });
+      // Save original positions
+      circle.setAttribute("data-original-top", circle.style.top);
+      circle.setAttribute("data-original-left", circle.style.left);
 
       circle.addEventListener('click', (e) => {
         if (selectedCircles.length < 2) {
@@ -92,33 +95,41 @@
         }
 
         if (selectedCircles.length === 2) {
-          const color1 = window.getComputedStyle(selectedCircles[0]).backgroundColor;
-          const color2 = window.getComputedStyle(selectedCircles[1]).backgroundColor;
-          const mixedColor = mixColors(color1, color2);
+          const [circle1, circle2] = selectedCircles;
+          const id1 = circle1.id;
+          const id2 = circle2.id;
 
-          const newCircle = document.createElement('div');
-          newCircle.className = 'circle';
-          newCircle.style.backgroundColor = mixedColor;
-          newCircle.style.width = '200px';
-          newCircle.style.height = '200px';
-          newCircle.style.top = '250px';
-          newCircle.style.left = '250px';
-          newCircle.textContent = 'Intersection';
-          document.getElementById('diagram').appendChild(newCircle);
+          // Move selected circles to the center
+          circle1.style.top = "200px";
+          circle1.style.left = "200px";
+          circle2.style.top = "200px";
+          circle2.style.left = "300px";
 
-          selectedCircles.forEach(circle => circle.style.border = "none");
-          selectedCircles = [];
+          setTimeout(() => {
+            newCircle = document.createElement('div');
+            newCircle.className = 'circle text-circle';
+            newCircle.style.backgroundColor = '#b19cd9';
+            newCircle.style.width = '300px';
+            newCircle.style.height = '300px';
+            newCircle.style.top = '250px';
+            newCircle.style.left = '250px';
+            newCircle.style.position = 'absolute';
+            newCircle.style.fontSize = '12px';
+            newCircle.style.padding = '15px';
+
+            if ((id1 === "race" && id2 === "gender") || (id1 === "gender" && id2 === "race")) {
+              newCircle.textContent = "On page 15, Lorde reflects on how her mother navigates being both Black and Woman throughout her childhood. She elaborates on her mother trying to protect her children from the struggles of racism, while also putting up this facade that she is more powerful in society than she really is. This moment is followed by Audre asking her mom about being spit on and her mom decides to lie to her in order to keep hiding the nature of society at the time. Here, Audre’s mother further teaches her children the need of a Black woman to be \"strong\" in order to survive in a society where the odds are stacked against them in two different ways. On pages 16–17, Lorde reflects on the role of her mother as a cultural guide and enforcer of traditional gender roles. Lorde’s mother embodies strength and teaches her cultural values, influencing Lorde’s understanding of womanhood and heritage. In contrast, on page 67, Lorde writes, \"My fondest and closest memories...of warm moments shared with my father. There were not many.\" This statement underscores the distant, provider role often ascribed to men, reinforcing traditional gender norms within the diaspora. These moments show how gender roles, passed down generationally, shape Lorde’s upbringing and connection to her culture.";
+            }
+
+            diagram.appendChild(newCircle);
+
+            // Reset circles on next click
+            document.body.addEventListener('click', resetCircles, { once: true });
+
+          }, 500);
         }
       });
     });
-
-    function mixColors(color1, color2) {
-      const rgb1 = color1.match(/\d+/g).map(Number);
-      const rgb2 = color2.match(/\d+/g).map(Number);
-
-      const mixedRgb = rgb1.map((value, index) => Math.round((value + rgb2[index]) / 2));
-      return `rgb(${mixedRgb[0]}, ${mixedRgb[1]}, ${mixedRgb[2]})`;
-    }
   </script>
 </body>
 </html>
