@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Venn Diagram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f4f4f9;
+      height: 100vh;
+    }
+    #diagram {
+      position: relative;
+      width: 700px;
+      height: 700px;
+    }
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 18px;
+      color: #000;
+    }
+    .circle:hover {
+      opacity: 0.8;
+    }
+    .tooltip {
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Venn Diagram: Themes in <i>Zami</i></h1>
+  <div id="diagram">
+    <div class="circle" id="gender" style="background-color: #ff7f7f; width: 300px; height: 300px; top: 200px; left: 50px;" data-section="Gender">Gender</div>
+    <div class="circle" id="race" style="background-color: #7f7fff; width: 300px; height: 300px; top: 200px; left: 300px;" data-section="Race">Race</div>
+    <div class="circle" id="diaspora" style="background-color: #7fff7f; width: 300px; height: 300px; top: 50px; left: 175px;" data-section="Diaspora">Diaspora</div>
+    <div class="circle" id="queerness" style="background-color: #ff7fff; width: 300px; height: 300px; top: 350px; left: 175px;" data-section="Queerness">Queerness</div>
+    
+    <div class="tooltip" id="tooltip">Hover over a section to learn more.</div>
+  </div>
+
+  <script>
+    const tooltips = {
+      "gender": "<strong>Gender:</strong> Explores Lorde's reflections on her mother’s strength and traditional gender roles.",
+      "race": "<strong>Race:</strong> Discusses societal pressures and Lorde’s experience as a Black woman.",
+      "diaspora": "<strong>Diaspora:</strong> Examines cultural heritage and identity in Lorde’s life.",
+      "queerness": "<strong>Queerness:</strong> Analyzes societal and personal challenges around sexual identity.",
+      "intersection": "<strong>Intersectionality:</strong> Overlaps between multiple identities that define Lorde’s experiences."
+    };
+
+    const circles = document.querySelectorAll('.circle');
+    const tooltip = document.getElementById('tooltip');
+    let selectedCircles = [];
+
+    circles.forEach(circle => {
+      circle.addEventListener('mouseover', (e) => {
+        const section = e.target.id;
+        tooltip.innerHTML = tooltips[section] || tooltips["intersection"];
+        tooltip.style.top = `${e.clientY - 40}px`;
+        tooltip.style.left = `${e.clientX + 10}px`;
+        tooltip.style.display = 'block';
+      });
+
+      circle.addEventListener('mouseout', () => {
+        tooltip.style.display = 'none';
+      });
+
+      circle.addEventListener('click', (e) => {
+        if (selectedCircles.length < 2) {
+          selectedCircles.push(e.target);
+          e.target.style.border = "2px solid black";
+        }
+
+        if (selectedCircles.length === 2) {
+          const color1 = window.getComputedStyle(selectedCircles[0]).backgroundColor;
+          const color2 = window.getComputedStyle(selectedCircles[1]).backgroundColor;
+          const mixedColor = mixColors(color1, color2);
+
+          const newCircle = document.createElement('div');
+          newCircle.className = 'circle';
+          newCircle.style.backgroundColor = mixedColor;
+          newCircle.style.width = '200px';
+          newCircle.style.height = '200px';
+          newCircle.style.top = '250px';
+          newCircle.style.left = '250px';
+          newCircle.textContent = 'Intersection';
+          document.getElementById('diagram').appendChild(newCircle);
+
+          selectedCircles.forEach(circle => circle.style.border = "none");
+          selectedCircles = [];
+        }
+      });
+    });
+
+    function mixColors(color1, color2) {
+      const rgb1 = color1.match(/\d+/g).map(Number);
+      const rgb2 = color2.match(/\d+/g).map(Number);
+
+      const mixedRgb = rgb1.map((value, index) => Math.round((value + rgb2[index]) / 2));
+      return `rgb(${mixedRgb[0]}, ${mixedRgb[1]}, ${mixedRgb[2]})`;
+    }
+  </script>
+</body>
+</html>
