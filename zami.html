@@ -25,6 +25,7 @@
       border-radius: 50%;
       opacity: 0.6;
       transition: opacity 0.3s;
+      cursor: pointer;
     }
     .circle:hover {
       opacity: 0.8;
@@ -38,9 +39,6 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       display: none;
       z-index: 10;
-    }
-    .circle[data-section]:hover + .tooltip {
-      display: block;
     }
   </style>
 </head>
@@ -66,6 +64,7 @@
 
     const circles = document.querySelectorAll('.circle');
     const tooltip = document.getElementById('tooltip');
+    let selectedCircles = [];
 
     circles.forEach(circle => {
       circle.addEventListener('mouseover', (e) => {
@@ -79,7 +78,40 @@
       circle.addEventListener('mouseout', () => {
         tooltip.style.display = 'none';
       });
+
+      circle.addEventListener('click', (e) => {
+        if (selectedCircles.length < 2) {
+          selectedCircles.push(e.target);
+          e.target.style.border = "2px solid black";
+        }
+
+        if (selectedCircles.length === 2) {
+          const color1 = window.getComputedStyle(selectedCircles[0]).backgroundColor;
+          const color2 = window.getComputedStyle(selectedCircles[1]).backgroundColor;
+          const mixedColor = mixColors(color1, color2);
+
+          const newCircle = document.createElement('div');
+          newCircle.className = 'circle';
+          newCircle.style.backgroundColor = mixedColor;
+          newCircle.style.width = '150px';
+          newCircle.style.height = '150px';
+          newCircle.style.top = '175px';
+          newCircle.style.left = '175px';
+          document.getElementById('diagram').appendChild(newCircle);
+
+          selectedCircles.forEach(circle => circle.style.border = "none");
+          selectedCircles = [];
+        }
+      });
     });
+
+    function mixColors(color1, color2) {
+      const rgb1 = color1.match(/\d+/g).map(Number);
+      const rgb2 = color2.match(/\d+/g).map(Number);
+
+      const mixedRgb = rgb1.map((value, index) => Math.round((value + rgb2[index]) / 2));
+      return `rgb(${mixedRgb[0]}, ${mixedRgb[1]}, ${mixedRgb[2]})`;
+    }
   </script>
 </body>
 </html>
