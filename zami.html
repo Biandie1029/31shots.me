@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Venn Diagram</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #f4f4f9;
+      height: 100vh;
+    }
+    #diagram {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+    .circle:hover {
+      opacity: 0.8;
+    }
+    .tooltip {
+      position: absolute;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+      z-index: 10;
+    }
+    .circle[data-section]:hover + .tooltip {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Interactive Venn Diagram: Themes in <i>Zami</i></h1>
+  <div id="diagram">
+    <div class="circle" id="gender" style="background-color: #ff7f7f; width: 200px; height: 200px; top: 150px; left: 50px;" data-section="Gender"></div>
+    <div class="circle" id="race" style="background-color: #7f7fff; width: 200px; height: 200px; top: 150px; left: 200px;" data-section="Race"></div>
+    <div class="circle" id="diaspora" style="background-color: #7fff7f; width: 200px; height: 200px; top: 50px; left: 125px;" data-section="Diaspora"></div>
+    <div class="circle" id="queerness" style="background-color: #ff7fff; width: 200px; height: 200px; top: 250px; left: 125px;" data-section="Queerness"></div>
+    
+    <div class="tooltip" id="tooltip">Hover over a section to learn more.</div>
+  </div>
+
+  <script>
+    const tooltips = {
+      "gender": "<strong>Gender:</strong> Explores Lorde's reflections on her mother’s strength and traditional gender roles.",
+      "race": "<strong>Race:</strong> Discusses societal pressures and Lorde’s experience as a Black woman.",
+      "diaspora": "<strong>Diaspora:</strong> Examines cultural heritage and identity in Lorde’s life.",
+      "queerness": "<strong>Queerness:</strong> Analyzes societal and personal challenges around sexual identity.",
+      "intersection": "<strong>Intersectionality:</strong> Overlaps between multiple identities that define Lorde’s experiences."
+    };
+
+    const circles = document.querySelectorAll('.circle');
+    const tooltip = document.getElementById('tooltip');
+
+    circles.forEach(circle => {
+      circle.addEventListener('mouseover', (e) => {
+        const section = e.target.id;
+        tooltip.innerHTML = tooltips[section] || tooltips["intersection"];
+        tooltip.style.top = `${e.clientY - 40}px`;
+        tooltip.style.left = `${e.clientX + 10}px`;
+        tooltip.style.display = 'block';
+      });
+
+      circle.addEventListener('mouseout', () => {
+        tooltip.style.display = 'none';
+      });
+    });
+  </script>
+</body>
+</html>
