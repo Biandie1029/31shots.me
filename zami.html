@@ -17,8 +17,8 @@
     }
     #diagram {
       position: relative;
-      width: 500px;
-      height: 500px;
+      width: 700px;
+      height: 700px;
     }
     .circle {
       position: absolute;
@@ -26,6 +26,12 @@
       opacity: 0.6;
       transition: opacity 0.3s;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 18px;
+      color: #000;
     }
     .circle:hover {
       opacity: 0.8;
@@ -45,10 +51,10 @@
 <body>
   <h1>Interactive Venn Diagram: Themes in <i>Zami</i></h1>
   <div id="diagram">
-    <div class="circle" id="gender" style="background-color: #ff7f7f; width: 200px; height: 200px; top: 150px; left: 50px;" data-section="Gender"></div>
-    <div class="circle" id="race" style="background-color: #7f7fff; width: 200px; height: 200px; top: 150px; left: 200px;" data-section="Race"></div>
-    <div class="circle" id="diaspora" style="background-color: #7fff7f; width: 200px; height: 200px; top: 50px; left: 125px;" data-section="Diaspora"></div>
-    <div class="circle" id="queerness" style="background-color: #ff7fff; width: 200px; height: 200px; top: 250px; left: 125px;" data-section="Queerness"></div>
+    <div class="circle" id="gender" style="background-color: #ff7f7f; width: 300px; height: 300px; top: 200px; left: 50px;" data-section="Gender">Gender</div>
+    <div class="circle" id="race" style="background-color: #7f7fff; width: 300px; height: 300px; top: 200px; left: 300px;" data-section="Race">Race</div>
+    <div class="circle" id="diaspora" style="background-color: #7fff7f; width: 300px; height: 300px; top: 50px; left: 175px;" data-section="Diaspora">Diaspora</div>
+    <div class="circle" id="queerness" style="background-color: #ff7fff; width: 300px; height: 300px; top: 350px; left: 175px;" data-section="Queerness">Queerness</div>
     
     <div class="tooltip" id="tooltip">Hover over a section to learn more.</div>
   </div>
@@ -93,10 +99,11 @@
           const newCircle = document.createElement('div');
           newCircle.className = 'circle';
           newCircle.style.backgroundColor = mixedColor;
-          newCircle.style.width = '150px';
-          newCircle.style.height = '150px';
-          newCircle.style.top = '175px';
-          newCircle.style.left = '175px';
+          newCircle.style.width = '200px';
+          newCircle.style.height = '200px';
+          newCircle.style.top = '250px';
+          newCircle.style.left = '250px';
+          newCircle.textContent = 'Intersection';
           document.getElementById('diagram').appendChild(newCircle);
 
           selectedCircles.forEach(circle => circle.style.border = "none");
