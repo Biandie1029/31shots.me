@@ -110,6 +110,29 @@ a:active {
     color: rgb(16, 241, 189);
 }
 
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.nav-buttons a {
+    text-decoration: none;
+    color: rgb(128, 0, 0);
+    font-size: 18px;
+    font-family: "Oswald", "Lato", "Arial", sans-serif;
+    padding: 10px 20px;
+    border: 2px solid rgb(128, 0, 0);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-buttons a:hover {
+    background-color: #111;
+    color: rgb(16, 241, 189);
+}
+
 .footer-home {
     text-align: center;
     margin-top: 20px;
