@@ -85,7 +85,6 @@ a:active {
     padding: 10px;
 }
 
-/* Additional Styling for Navigation Arrows */
 .nav-arrows {
     position: fixed;
     top: 10px;
@@ -117,7 +116,8 @@ a:active {
     margin: 20px 0;
 }
 
-.nav-buttons a {
+.nav-buttons a, 
+.footer-home a {
     text-decoration: none;
     color: rgb(128, 0, 0);
     font-size: 18px;
@@ -128,7 +128,8 @@ a:active {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.nav-buttons a:hover {
+.nav-buttons a:hover,
+.footer-home a:hover {
     background-color: #111;
     color: rgb(16, 241, 189);
 }
@@ -142,9 +143,4 @@ a:active {
     text-decoration: none;
     color: rgb(128, 0, 0);
     font-size: 18px;
-}
-
-.footer-home a:hover {
-    background-color: #111;
-    color: rgb(16, 241, 189);
 }
